@@ -9,7 +9,7 @@
                 <div class="flex items-center justify-between w-full h-12">
                     <div class="h-full">
                         {{-- ADD USER --}}
-                        <livewire:sites.add-site>
+                        <livewire:customers.add-customer>
                     </div>
                     {{-- SEARCH --}}
                     <livewire:sites.search-site>

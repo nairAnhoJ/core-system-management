@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Livewire\Sites;
+namespace App\Livewire\Customers;
 
-use App\Models\Site;
 use Livewire\Component;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
-class AddSite extends Component {
+class AddCustomer extends Component {
 
     public $addModal = false;
 
@@ -61,6 +60,6 @@ class AddSite extends Component {
     }
 
     public function render() {
-        return view('livewire.sites.add-site');
+        return view('livewire.customers.add-customer');
     }
 }
