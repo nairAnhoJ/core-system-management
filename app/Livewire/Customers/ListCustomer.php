@@ -13,15 +13,15 @@ class ListCustomer extends Component {
 
     public $search;
 
-    #[On('site-search')]
+    #[On('customer-search')]
     public function updateSearch($search) {
         $this->search = $search;
         $this->resetPage();
     }
 
-    #[On('site-created')]
-    #[On('site-updated')]
-    #[On('site-deleted')]
+    #[On('customer-created')]
+    #[On('customer-updated')]
+    #[On('customer-deleted')]
     public function render() {
         $results = Customer::where('is_deleted', 0)
             ->whereRaw("CONCAT_WS(' ', name, address, area) LIKE ?", ['%' . $this->search . '%'])

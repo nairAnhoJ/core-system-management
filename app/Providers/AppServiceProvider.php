@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Customer;
 use App\Models\Department;
 use App\Models\Site;
 use Illuminate\Support\Facades\Validator;

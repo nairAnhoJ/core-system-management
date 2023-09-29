@@ -17,9 +17,9 @@
                         <td class="p-2">{{ $result->area }}</td>
                         <td class="p-2 whitespace-nowrap">{{ $result->address }}</td>
                         <td>
-                            <livewire:sites.edit-site :id="$result->id" :wire:key="'edit-'.$result->id">
+                            <livewire:customers.edit-customer :id="$result->id" :wire:key="'edit-'.$result->id">
                             <span class="mx-[1px]">|</span>
-                            <livewire:sites.delete-site :id="$result->id" :wire:key="'delete-'.$result->id">
+                            <livewire:customers.delete-customer :id="$result->id" :wire:key="'delete-'.$result->id">
                         </td>
                     </tr>
                 @endforeach

@@ -1,4 +1,4 @@
-<div class="h-full">
+<div class="inline">
 
     {{-- SUCCESS ALERT --}}
         @if (session('success'))
@@ -17,16 +17,16 @@
             </div>
         @endif
     {{-- SUCCESS ALERT --}}
-
-    {{-- ADD MODAL --}}
-        <div id="addModal" class="{{ ($addModal) ? '' : 'hidden' }} absolute top-0 left-0 w-screen h-screen bg-gray-900 z-[99] !bg-opacity-50 overflow-hidden flex items-center justify-center p-5">
+        
+    {{-- EDIT MODAL --}}
+        <div id="editModal" class="{{ ($editModal) ? '' : 'hidden' }} absolute top-0 left-0 w-screen h-screen bg-gray-900 z-[99] !bg-opacity-50 overflow-hidden flex items-center justify-center p-5">
             <div class="w-2/3 h-full bg-white rounded-lg">
                 <!-- Modal content -->
-                <form wire:submit='store' class="h-full bg-white rounded-lg shadow">
+                <form wire:submit='update' class="relative h-full bg-white rounded-lg shadow">
                     <!-- Modal header -->
-                    <div class="flex items-start justify-between p-4 border-b rounded-t shadow">
+                    <div class="flex items-start justify-between p-4 border-b rounded-t">
                         <h3 class="text-xl font-semibold text-gray-900">
-                            Add Customer
+                            Edit Site
                         </h3>
                         <button type="button" wire:click='cancel' class="inline-flex items-center justify-center w-8 h-8 ml-auto text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900">
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -36,7 +36,7 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <div class="p-4 h-[calc(100%-140px)] overflow-x-hidden overflow-y-auto">
+                    <div class="p-4 h-[calc(100%-140px)] overflow-x-hidden overflow-y-auto text-left">
                         <div class="space-y-4">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-900">Name</label>
@@ -155,14 +155,14 @@
                         </div>
                     </div>
                     <!-- Modal footer -->
-                    <div class="flex items-center p-4 space-x-2 border-t border-gray-200 rounded-b shadow">
+                    <div class="flex items-center p-4 space-x-2 border-t border-gray-200 rounded-b">
                         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">SUBMIT</button>
                         <button type="button" wire:click='cancel' class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">CANCEL</button>
                     </div>
                 </form>
             </div>
         </div>
-    {{-- ADD MODAL --}}
-
-    <button wire:click='add' class="flex items-center h-full px-8 text-lg font-bold text-white bg-blue-500 rounded-lg">ADD</button>
+    {{-- EDIT MODAL --}}
+    
+    <button wire:click='edit({{ $id }})' class="font-medium text-blue-500 hover:underline">EDIT</button>
 </div>

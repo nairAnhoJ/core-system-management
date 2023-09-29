@@ -12,7 +12,7 @@
                         <livewire:customers.add-customer>
                     </div>
                     {{-- SEARCH --}}
-                    <livewire:sites.search-site>
+                    <livewire:customers.search-customer>
                 </div>
             {{-- CONTROLS --}}
 
