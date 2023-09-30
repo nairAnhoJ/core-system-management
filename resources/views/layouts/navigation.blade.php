@@ -6,7 +6,7 @@
                     <path d="M95-203v-95h771v95H95Zm0-230v-94h771v94H95Zm0-229v-95h771v95H95Z"/>
                 </svg>
             </button>
-            <span class="ml-2 text-2xl font-bold text-white">{{ $title ?? config('app.name', 'MRF - System') }}</span>
+            <span class="ml-2 text-2xl font-bold text-white whitespace-nowrap">{{ $title ?? config('app.name', 'MRF - System') }}</span>
         </div>
         <div class="justify-center h-full px-1 bg-white rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
             <a href="{{ route('logout') }}" class="flex items-center h-full p-1">
@@ -44,26 +44,26 @@
             <span class="ml-2 font-medium">CUSTOMERS</span>
         </a>
 
-        <a href="#" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
+        <a href="{{ route('brands') }}" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-full aspect-square">
                 <path xmlns="http://www.w3.org/2000/svg" d="M583-73q-28 28-67.5 28T448-73L73-448q-15-15-21-32t-6-36v-304q0-40 27-67.5t67-27.5h304q19 0 37 6.5t33 21.5l373 372q29 29 29 69t-29 69L583-73ZM245-664q21 0 36.5-15.5T297-716q0-21-15.5-36.5T245-768q-21 0-36.5 15.5T193-716q0 21 15.5 36.5T245-664Z"/>
             </svg>
             <span class="ml-2 font-medium">FORKLIFT BRANDS</span>
         </a>
 
-        <a href="#" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
+        <a href="{{ route('models') }}" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-full aspect-square">
                 <path xmlns="http://www.w3.org/2000/svg" d="M433-66 142-233q-23.25-13.426-35.125-35.42T95-315v-330q0-24.586 11.875-46.58T142-727l291-168q22.328-12 47.164-12Q505-907 527-895l291 168q23.25 13.426 35.625 35.42T866-645v330q0 24.586-12.375 46.58T818-233L527-66q-22.328 13-47.164 13Q455-53 433-66Zm4-389.625V-173l43 25 44-25v-282.787L771-600v-44.985L723-672 480-530 236-672l-47 26.672V-599l248 143.375Z"/>
             </svg>
             <span class="ml-2 font-medium">FORKLIFT MODELS</span>
         </a>
 
-        <a href="#" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
+        {{-- <a href="#" class="flex items-center w-full h-12 p-2 rounded-lg hover:bg-neutral-100 text-neutral-700 hover:text-neutral-800">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" class="h-full aspect-square">
                 <path xmlns="http://www.w3.org/2000/svg" d="m366-55-21-134q-13-4-29.5-13.5T288-221l-125 58L47-368l114-83q-1-6-1.5-14.5T159-480q0-6 .5-14.5T161-509L47-593l116-203 127 57q10-8 26-17t29-13l21-137h228l21 136q13 5 29.5 13.5T672-739l126-57 115 203-115 82q1 7 2 15.5t1 15.5q0 7-1 15t-2 15l115 82-116 205-126-58q-11 9-26.5 18.5T615-189L594-55H366Zm112-295q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Z"/>
             </svg>
             <span class="ml-2 font-medium">FORKLIFT PARTS</span>
-        </a>
+        </a> --}}
         
     </div>
 </aside>

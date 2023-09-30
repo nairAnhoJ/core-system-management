@@ -36,6 +36,14 @@ Route::middleware('auth')->group(function () {
         return view('sections.customers', ['title' => 'Customers']);
     })->name('customers');
 
+    Route::get('/forklift-brands', function () {
+        return view('sections.brands', ['title' => 'Forklift Brands']);
+    })->name('brands');
+
+    Route::get('/forklift-models', function () {
+        return view('sections.models', ['title' => 'Forklift Models']);
+    })->name('models');
+
 
 
 
