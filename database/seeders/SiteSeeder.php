@@ -14,6 +14,19 @@ class SiteSeeder extends Seeder {
     public function run(): void {
         $site = new Site();
         $site->name = strtoupper('Parañaque (Head Office)');
+        $site->area = strtoupper('CENTRAL');
+        $site->key = Str::uuid()->toString();
+        $site->save();
+
+        $site = new Site();
+        $site->name = strtoupper('GEN TRI');
+        $site->area = strtoupper('SOUTH LUZON');
+        $site->key = Str::uuid()->toString();
+        $site->save();
+
+        $site = new Site();
+        $site->name = strtoupper('LA UNION');
+        $site->area = strtoupper('NORTH LUZON');
         $site->key = Str::uuid()->toString();
         $site->save();
     }

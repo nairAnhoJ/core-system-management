@@ -9,12 +9,12 @@ return new class extends Migration {
      * Run the migrations.
      */
     public function up(): void {
-        Schema::create('sites', function (Blueprint $table) {
-            $table->id();
+        Schema::create('models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedBigInteger('brand_id');
             $table->string('name');
-            $table->string('area');
-            $table->string('is_deleted')->default('0');
-            $table->string('is_active')->default('1');
+            $table->boolean('is_active')->default(1);
+            $table->boolean('is_deleted')->default(0);
             $table->string('key');
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration {
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('models');
     }
 };
