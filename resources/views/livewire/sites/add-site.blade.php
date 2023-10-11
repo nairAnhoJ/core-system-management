@@ -45,6 +45,20 @@
                                     <span class="text-xs text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <div>
+                                <label for="area" class="block text-sm font-medium text-gray-900">Area</label>
+                                <select id="area" wire:model='area' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option hidden>Select Area</option>
+                                    <option value="CENTRAL">Central</option>
+                                    <option value="SOUTH LUZON">South Luzon</option>
+                                    <option value="NORTH LUZON">North Luzon</option>
+                                    <option value="VISAYAS">Visayas</option>
+                                    <option value="MINDANAO">Mindanao</option>
+                                </select>
+                                @error('area')
+                                    <span class="text-xs text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                     <!-- Modal footer -->

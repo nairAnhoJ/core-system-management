@@ -5,6 +5,7 @@
             <thead class="sticky top-0 tracking-wide bg-gray-300">
                 <tr>
                     <th class="p-2 text-left">Name</th>
+                    <th>Area</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -12,6 +13,7 @@
                 @foreach ($results as $result)
                     <tr wire:key="model-{{ $result->id }}" class="text-center bg-gray-100 even:bg-gray-200">
                         <td class="p-2 text-left">{{ $result->name }}</td>
+                        <td class="p-2">{{ $result->area }}</td>
                         <td>
                             <livewire:sites.edit-site :id="$result->id" :wire:key="'edit-'.$result->id">
                             <span class="mx-[1px]">|</span>

@@ -13,10 +13,12 @@ class EditSite extends Component {
     public $id;
 
     public $name;
+    public $area;
 
     public function rules() {
         return [
             'name' => 'required|unique_site_name',
+            'area' => 'required',
         ];
     }
 
@@ -30,6 +32,7 @@ class EditSite extends Component {
 
         $result = Site::where('id', $id)->first();
         $this->name = $result->name;
+        $this->area = $result->area;
 
         $this->id = $id;
         $this->editModal = true;
@@ -42,9 +45,11 @@ class EditSite extends Component {
             $validator = Validator::make(
                 [
                     'name' => $this->name,
+                    'area' => $this->area,
                 ],
                 [
                     'name' => 'required|unique_site_name',
+                    'area' => 'required',
                 ]
             );
 
@@ -56,6 +61,7 @@ class EditSite extends Component {
         }
 
         $result->name = strtoupper($this->name);
+        $result->area = strtoupper($this->area);
         $result->save();
 
         $this->editModal = false;

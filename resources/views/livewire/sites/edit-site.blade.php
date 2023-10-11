@@ -37,12 +37,26 @@
                     </div>
                     <!-- Modal body -->
                     <div class="p-4">
-                        <div class="space-y-4">
+                        <div class="space-y-4 text-left">
                             <div>
                                 <label for="ename" class="block text-sm font-medium text-left text-gray-900">Name</label>
                                 <input type="text" id="ename" wire:model='name' value="{{ $name }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" autocomplete="off">
                                 @error('name')
-                                    <span class="w-full text-xs text-left text-red-500">{{ $message }}</span>
+                                    <span class="w-full text-xs text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div>
+                                <label for="area" class="block text-sm font-medium text-gray-900">Area</label>
+                                <select id="area" wire:model='area' class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                    <option hidden>Select Area</option>
+                                    <option {{ ($area == 'CENTRAL') ? 'selected' : '' }} value="CENTRAL">Central</option>
+                                    <option {{ ($area == 'SOUTH LUZON') ? 'selected' : '' }} value="SOUTH LUZON">South Luzon</option>
+                                    <option {{ ($area == 'NORTH LUZON') ? 'selected' : '' }} value="NORTH LUZON">North Luzon</option>
+                                    <option {{ ($area == 'VISAYAS') ? 'selected' : '' }} value="VISAYAS">Visayas</option>
+                                    <option {{ ($area == 'MINDANAO') ? 'selected' : '' }} value="MINDANAO">Mindanao</option>
+                                </select>
+                                @error('area')
+                                    <span class="text-xs text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>

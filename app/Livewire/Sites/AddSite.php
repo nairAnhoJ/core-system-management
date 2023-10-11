@@ -12,15 +12,17 @@ class AddSite extends Component {
     public $addModal = false;
 
     public $name;
+    public $area;
 
     public function rules() {
         return [
             'name' => 'required|unique_site_name',
+            'area' => 'required',
         ];
     }
 
     public function add() {
-        $this->reset(['name']);
+        $this->reset(['name', 'area']);
         $this->resetErrorBag();
         $this->resetValidation();
         $this->addModal = true;
@@ -30,6 +32,7 @@ class AddSite extends Component {
         $validator = Validator::make(
             [
                 'name' => $this->name,
+                'area' => $this->area,
             ],
             [
                 'name' => 'required|unique_site_name',
@@ -44,6 +47,7 @@ class AddSite extends Component {
 
         $new = new Site();
         $new->name = strtoupper($this->name);
+        $new->area = strtoupper($this->area);
         $new->key = Str::uuid()->toString();
         $new->save();
 
